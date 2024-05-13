@@ -2,8 +2,9 @@ import project1 from "../assets/projects/project-1.jpg";
 import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
-import traffic from "D:/React-Projects/Portfolio/src/components/traffic.jpeg";
-import auto from "D:/React-Projects/Portfolio/src/assets/projects/auto.jpeg";
+import traffic from "../assets/projects/traffic.jpeg";
+import auto from "../assets/projects/auto.jpeg";
+import chirping_hub from "../assets/projects/chirping_hub.png"
 
 export const HERO_CONTENT = `I am a passionate front-end and Machine Learning developer with a knack for 
                             crafting robust and scalable web applications and Machine Learning Models. 
@@ -54,7 +55,7 @@ export const PROJECTS = [
   },
   {
     title: "Chirping Hub",
-    image: project2,
+    image: chirping_hub,
     description:
       "An application for posting our thoughts and ideas to the world for a better change",
     technologies: ["React", "Next.JS", "Tailwind CSS", "Prisma", "MongoDB", "Google OAuth"],

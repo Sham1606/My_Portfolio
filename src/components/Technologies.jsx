@@ -3,7 +3,7 @@ import { SiAnaconda, SiFlask, SiLamborghini, SiMongodb, SiMysql, SiNumpy, SiOpen
 import { SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiPypi } from 'react-icons/si';
 import { TbBrandNodejs } from "react-icons/tb";
 import { SiOpencv } from "react-icons/si";
-import 'D:/React-Projects/Portfolio/src/index.css'
+import '../index.css';
 import { animate, motion } from "framer-motion";
 import { SiPrisma, SiTensorflow } from "react-icons/si";
 
