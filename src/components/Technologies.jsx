@@ -6,7 +6,6 @@ import { SiOpencv } from "react-icons/si";
 import 'D:/React-Projects/Portfolio/src/index.css'
 import { animate, motion } from "framer-motion";
 import { SiPrisma, SiTensorflow } from "react-icons/si";
-import tf from "D:/React-Projects/Portfolio/src/assets/projects/TF.png";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
