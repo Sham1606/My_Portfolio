@@ -1,6 +1,5 @@
 import { HERO_CONTENT } from "../constants"
-import bg from "D:/React-Projects/Portfolio/bg.jpg"
-import auro from "D:/React-Projects/Portfolio/auro.jpg"
+import auro from "../assets/auro.jpg";
 import { motion } from "framer-motion";
 
 const container = (delay) => ({
