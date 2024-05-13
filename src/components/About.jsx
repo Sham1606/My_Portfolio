@@ -1,5 +1,4 @@
-import Abt from 'D:/React-Projects/Portfolio/src/components/Abt.jpg';
-import my_img from "D:/React-Projects/Portfolio/my_img.png"
+import my_img from "../assets/auro.jpg"
 import { ABOUT_TEXT } from '../constants';
 import { motion } from 'framer-motion';
 
