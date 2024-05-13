@@ -1,4 +1,4 @@
-import my_img from "../assets/auro.jpg"
+import my_img from "../assets/projects/my_img.png"
 import { ABOUT_TEXT } from '../constants';
 import { motion } from 'framer-motion';
 
