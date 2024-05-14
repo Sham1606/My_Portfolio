@@ -62,7 +62,7 @@ export const PROJECTS = [
     image: auto,
     description:
       "An Application where we will just upload the dataset or data in form of (URL, Local Path(.csv, .xlsx, .json etc..,), Databases(MongoDB, MySQL) even API where it will take the data and process and keep it ready for operations possible for both Data Science and Machine Learning or only for Data Science, which is a prototype and is still on development stage",
-    technologies: ["HTML", "CSS", "Python",  "Machine Learning","DeepLearning", "Flask"],
+    technologies: ["HTML", "CSS", "Python",  "Machine Learning", "Flask"],
   },
   {
     title: "Traffic Predicition",
