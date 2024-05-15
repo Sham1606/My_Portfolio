@@ -99,6 +99,12 @@ const Technologies = () => {
          className="rounded-2xl border-4 border-neutral-800 p-4">
           <SiTensorflow className="text-7xl text-orange-500" />  {/* Node.js - Green */}
         </motion.div>
+        <motion.div
+        variants={iconVariants(5)}
+        initial = "initial" animate="animate"
+         className="rounded-2xl border-4 border-neutral-800 p-4">
+          <SiTensorflow className="text-7xl text-orange-500" />  {/* Node.js - Green */}
+        </motion.div>
 
 
       </div>
