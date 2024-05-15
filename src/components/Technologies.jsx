@@ -1,11 +1,11 @@
 import { RiReactjsLine } from "react-icons/ri";
-import { SiAnaconda, SiFlask, SiLamborghini, SiMongodb, SiMysql, SiNumpy, SiOpenai, SiPandas, SiPython, SiTableau, SiTypescript } from "react-icons/si";
-import { SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiPypi } from 'react-icons/si';
-import { TbBrandNodejs } from "react-icons/tb";
+import { SiFlask,SiMongodb, SiMysql, SiNumpy, SiPandas, SiPython, SiTypescript } from "react-icons/si";
+import { SiTailwindcss } from 'react-icons/si';
 import { SiOpencv } from "react-icons/si";
 import '../index.css';
 import { animate, motion } from "framer-motion";
 import { SiPrisma, SiTensorflow } from "react-icons/si";
+import { SiScikitlearn } from "react-icons/si";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -92,6 +92,12 @@ const Technologies = () => {
         initial = "initial" animate="animate"
          className="rounded-2xl border-4 border-neutral-800 p-4">
           <SiPrisma className="text-7xl text-blue-900" />  {/* Node.js - Green */}
+        </motion.div>
+        <motion.div
+        variants={iconVariants(5)}
+        initial = "initial" animate="animate"
+         className="rounded-2xl border-4 border-neutral-800 p-4">
+          <SiScikitlearn className="text-7xl text-orange-400" />  {/* Node.js - Green */}
         </motion.div>
         <motion.div
         variants={iconVariants(5)}
