@@ -94,12 +94,6 @@ const Technologies = () => {
           <SiPrisma className="text-7xl text-blue-900" />  {/* Node.js - Green */}
         </motion.div>
         <motion.div
-        variants={iconVariants(7)}
-        initial = "initial" animate="animate"
-         className="rounded-2xl border-4 border-neutral-800 p-4">
-          <SiScikitlearn className="text-7xl text-orange-400" />  {/* Node.js - Green */}
-        </motion.div>
-        <motion.div
         variants={iconVariants(5)}
         initial = "initial" animate="animate"
          className="rounded-2xl border-4 border-neutral-800 p-4">
