@@ -6,6 +6,7 @@ import { SiOpencv } from "react-icons/si";
 import '../index.css';
 import { animate, motion } from "framer-motion";
 import { SiPrisma, SiTensorflow } from "react-icons/si";
+import { SiScikitlearn } from "react-icons/si";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -92,6 +93,12 @@ const Technologies = () => {
         initial = "initial" animate="animate"
          className="rounded-2xl border-4 border-neutral-800 p-4">
           <SiPrisma className="text-7xl text-blue-900" />  {/* Node.js - Green */}
+        </motion.div>
+        <motion.div
+        variants={iconVariants(5)}
+        initial = "initial" animate="animate"
+         className="rounded-2xl border-4 border-neutral-800 p-4">
+          <SiScikitlearn className="text-7xl text-orange-400" />  {/* Node.js - Green */}
         </motion.div>
         <motion.div
         variants={iconVariants(5)}
