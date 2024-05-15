@@ -94,10 +94,10 @@ const Technologies = () => {
           <SiPrisma className="text-7xl text-blue-900" />  {/* Node.js - Green */}
         </motion.div>
         <motion.div
-        variants={iconVariants(5)}
+        variants={iconVariants(7)}
         initial = "initial" animate="animate"
          className="rounded-2xl border-4 border-neutral-800 p-4">
-          <SiTensorflow className="text-7xl text-orange-500" />  {/* Node.js - Green */}
+          <SiScikitlearn className="text-7xl text-orange-400" />  {/* Node.js - Green */}
         </motion.div>
         <motion.div
         variants={iconVariants(5)}
