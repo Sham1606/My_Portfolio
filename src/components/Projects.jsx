@@ -1,6 +1,9 @@
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa"; // Importing the GitHub icon from react-icons library
+import { PROJECTS } from "../constants";
+import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa"; // Importing the GitHub icon from react-icons library
 
 const Projects = () => {
   return (
@@ -64,5 +67,9 @@ const Projects = () => {
     </div>
   );
 };
+  );
+};
+
+export default Projects;
 
 export default Projects;

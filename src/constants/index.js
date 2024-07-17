@@ -70,6 +70,7 @@ export const PROJECTS = [
       "A Website for predicting the traffic of a particular day by giving the data, weather, and whether it is any holiday or any auspicious day ",
     technologies: ["HTML", "CSS", "JS", "Numpy", "Pandas","Random Forest(ML)","Flask"],
     repositoryUrl: "https://github.com/Sham1606/Traffic_Prediction/tree/main/_01_Traffic_predicition"
+    repositoryUrl: "https://github.com/Sham1606/Traffic_Prediction/tree/main/_01_Traffic_predicition"
   },
 ];
 

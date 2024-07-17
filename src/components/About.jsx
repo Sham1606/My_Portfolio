@@ -2,7 +2,6 @@ import my_img from "../assets/projects/my_img.png";
 import { ABOUT_TEXT } from '../constants';
 import { motion } from 'framer-motion';
 import { highlightWords } from "../utils/highlights";
-import { Link as ScrollLink } from "react-scroll";
 
 const About = () => {
   const wordsToHighlight = {
@@ -32,14 +31,14 @@ const About = () => {
           className="w-full lg:w-1/2 lg:p-8"
         >
           <div className="flex items-center justify-center">
-            <img src={my_img} alt="about" className="w-[auto] h-[100%] rounded-xl" />
+            <img src={my_img} alt="about" className="w-auto h-auto rounded-xl" />
           </div>
         </motion.div>
         <motion.div 
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.5 }}
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 lg:p-8"
         >
           <div className="flex justify-center lg:justify-start">
             <p className="my-2 max-w-xl py-6">
