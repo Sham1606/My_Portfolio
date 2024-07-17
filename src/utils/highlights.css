@@ -1,0 +1,14 @@
+/* src/utils/highlight.css */
+
+.glow {
+  animation: glow 1s ease-in-out infinite alternate; /* Define the animation */
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00e8, 0 0 70px #ff00e8, 0 0 80px #ff00e8, 0 0 100px #ff00e8, 0 0 150px #ff00e8;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff00e8, 0 0 40px #ff00e8, 0 
+  }
+}

@@ -1,15 +1,11 @@
-import project1 from "../assets/projects/project-1.jpg";
+import VC from "../assets/projects/VC.jpeg"
+import OF from "../assets/projects/OF.jpeg";
+import Portfolio from "../assets/projects/Portfolio.jpeg";
 import traffic from "../assets/projects/traffic.jpeg";
-import auto from "../assets/projects/auto.jpeg";
-import chirping_hub from "../assets/projects/chirping_hub.png"
 
-export const HERO_CONTENT = `I am a passionate front-end and Machine Learning developer with a knack for 
-                            crafting robust and scalable web applications and Machine Learning Models. 
-                            With a good experience, I have honed my skills in front-end technologies like React and Next.js, and also with a quite a little knowledge of three.js and gspa
-                            as well as back-end technologies like  MySQL and MongoDB. And in Data Science also involving in Machine Learning Technologies such as Scikit-Learn and Tensorflow for Machine Learning
-                            My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
+export const HERO_CONTENT = `I am a passionate front-end and Machine Learning developer, specializing in creating robust and scalable web applications with React and Next.js, and delving into the immersive worlds of three.js and gspa. My back-end expertise spans MySQL and MongoDB, while my data science prowess includes Machine Learning with Scikit-Learn and TensorFlow. I thrive on crafting innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
-export const ABOUT_TEXT = `As a college sophomore passionate about web development, I am dedicated to honing my skills in creating efficient and user-friendly web applications. Despite being in my second year, I have already begun exploring various technologies, including React, Next.js, Python, MySQL, MongoDB, and exciting machine learning modules like TensorFlow, scikit-learn, and OpenCV. My journey into the world of web development started with a fascination for understanding how things work, and it has blossomed into a pursuit where I eagerly embrace new challenges and learning opportunities. I thrive in collaborative settings and take joy in tackling intricate problems to deliver innovative solutions. Beyond academics, I enjoy staying active, experimenting with emerging technologies, and contributing to open-source projects, all while nurturing my passion for coding`;
+export const ABOUT_TEXT = `As a sophomore college student passionate about web development, I'm committed to refining my skills in creating efficient and user-friendly web applications. Despite being in my second year, I've delved into various technologies like React, Next.js, Python, MySQL, MongoDB, as well as TensorFlow, Scikit-Learn, and OpenCV for machine learning. My journey into web development began with a curiosity for understanding how things work, evolving into a pursuit where I eagerly tackle new challenges. I thrive in collaborative environments, enjoy solving intricate problems, and contribute to open-source projects while nurturing my passion for coding.`;
 
 export const EXPERIENCES = [
   {
@@ -44,25 +40,28 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Plaid - A Banking and also a payment website",
-    image: project1,
+    title: "Volume Controller",
+    image: VC,
     description:
-      "A fully functional banking website for transactions and user's can also check their transactions by means of visualizing and also provides user authentication.Which is a prototype for my future ideas in terms of business and payments",
-    technologies: ["HTML", "CSS", "React", "Next.js","TypeScript", "Banking API's"],
+      "In this project we can able to adjust the volume setting with the gesture of our hand",
+    technologies: ["Python", "Computer Vision"],
+    repositoryUrl: "https://github.com/Sham1606/VC"
   },
   {
-    title: "Chirping Hub",
-    image: chirping_hub,
+    title: "Analysis of Online Food Ordering",
+    image: OF,
     description:
-      "An application for posting our thoughts and ideas to the world for a better change",
-    technologies: ["React", "Next.JS", "Tailwind CSS", "Prisma", "MongoDB", "Google OAuth"],
+      "This is descriptive and visual analysis for recent trend analysis on the recent development of online food ordering",
+    technologies: ["Python", "Plotly","Matplotlib","Seaborn"],
+    repositoryUrl: "https://github.com/Sham1606/Analyzing_and_Visualizing_Online_Food_Ordering/blob/main/Online_foods.ipynb"
   },
   {
-    title: "Alchemist (evokes the idea of transforming raw data into something valuable)",
-    image: auto,
+    title: "Sham's Byte - An Portfolio about Myself ",
+    image: Portfolio,
     description:
-      "An Application where we will just upload the dataset or data in form of (URL, Local Path(.csv, .xlsx, .json etc..,), Databases(MongoDB, MySQL) even API where it will take the data and process and keep it ready for operations possible for both Data Science and Machine Learning or only for Data Science, which is a prototype and is still on development stage",
-    technologies: ["HTML", "CSS", "Python",  "Machine Learning", "Flask"],
+      "This is a Portfolio Website about myself and my works, which shows that, I am not only a Data Scientist, but also a Front-End Developer",
+    technologies: ["React JS", "Tailwind CSS", "Framer Motion"],
+    repositoryUrl: "https://github.com/Sham1606/My_Portfolio"
   },
   {
     title: "Traffic Predicition",

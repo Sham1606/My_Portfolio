@@ -29,14 +29,6 @@ const Projects = () => {
                 alt={project.title}
                 className="mb-6 rounded"
               />
-              <a
-                href={project.repositoryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute top-0 right-0 m-2 text-purple-900"
-              >
-                <FaGithub size={20} />
-              </a>
             </motion.div>
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
@@ -46,14 +38,25 @@ const Projects = () => {
             >
               <h6 className="mb-2 font-semibold">{project.title}</h6>
               <p className="mb-4 text-neutral-400">{project.description}</p>
-              {project.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900"
-                >
-                  {tech}
-                </span>
-              ))}
+              <div className="flex flex-wrap items-center mb-4">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <a
+                href={project.repositoryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white underline hover:no-underline hover:text-blue-500 flex items-center"
+              >
+                Check it on GitHub
+                <FaGithub className="ml-2" />
+              </a>
             </motion.div>
           </div>
         ))}
