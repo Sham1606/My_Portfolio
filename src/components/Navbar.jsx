@@ -1,6 +1,6 @@
 import new_logo from './new_logo.png';
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 
 const Navbar = () => {
   return (
