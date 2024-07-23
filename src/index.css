@@ -74,3 +74,13 @@
 .formSection {
   margin-bottom: 20px;
 }
+
+/* index.css or Navbar.css */
+body {
+  font-family: 'Playwrite AU SA', sans-serif; /* Apply the imported font */
+}
+
+.navbar-text {
+  color: white; /* Set text color to white */
+}
+
