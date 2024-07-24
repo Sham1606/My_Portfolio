@@ -22,9 +22,16 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
   return (
     <nav className="mb-20 flex items-center justify-between left-0 right-0 top-0 z-50 bg-transparent py-6 h-20">
       <div className="flex items-center justify-between w-full px-6">
-        <a href="/" onClick={() => window.location.reload()} className="flex-shrink-0">
+        <motion.a 
+          href="/" 
+          onClick={() => window.location.reload()} 
+          className="flex-shrink-0"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <img src={new_logo} alt="logo" className="logo left-1" />
-        </a>
+        </motion.a>
         <div className="hidden lg:flex flex-grow justify-center">
           <ul className='flex items-center gap-8'>
             {navigationLinks.map((item, index) => (
