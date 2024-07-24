@@ -1,6 +1,7 @@
 import new_logo from './new_logo.png';
 import { useState } from "react";
-import { FaBars, FaTimes, FaLinkedin, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaBars, FaTimes, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -81,7 +82,7 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
           <div className="group relative">
             <a href="https://x.com/ShamGan160605?t=NZ0ccTbbW4sw0YH_VwRIyA&s=09" target="_blank" rel="noopener noreferrer">
               <button className="hover:text-white">
-                <FaTwitter className="w-10 h-6 transition duration-200 ease-in-out group-hover:scale-125" />
+                <FaXTwitter className="w-10 h-6 transition duration-200 ease-in-out group-hover:scale-125" />
               </button>
             </a>
             <span className="absolute top-10 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-black bg-black py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100 text-white">
