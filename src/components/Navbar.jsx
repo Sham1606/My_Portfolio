@@ -32,7 +32,7 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <img src={new_logo} alt="logo" className="logo left-1" />
+            <img src={new_logo} alt="logo" className="logo right-6" />
           </motion.a>
           <div className="hidden lg:flex flex-grow justify-center">
             <ul className='flex items-center gap-8'>
@@ -40,7 +40,7 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
                 <li key={index}>
                   {item.href.startsWith('#') ? (
                     <a
-                      className="text-sm hover:text-yellow-400"
+                      className="text-sm hover:text-cyan-400 cursor-pointer"
                       href={item.href}
                       onClick={(e) => handleLinkClick(e, item.href, item.ref)}
                     >
@@ -66,7 +66,7 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
                   <FaLinkedin className="w-10 h-6 transition duration-200 ease-in-out group-hover:scale-125" />
                 </button>
               </a>
-              <span className="absolute top-10 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-blue-400 bg-blue-700 py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100 text-white">
+              <span className="absolute top-10 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg bg-blue-700 py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100 text-white">
                 LinkedIn
               </span>
             </div>
@@ -76,7 +76,7 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
                   <FaGithub className="w-10 h-6 transition duration-200 ease-in-out group-hover:scale-125" />
                 </button>
               </a>
-              <span className="absolute top-10 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-400 bg-black py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100 text-white">
+              <span className="absolute top-10 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg  bg-gray-800 py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100 text-white">
                 Github
               </span>
             </div>

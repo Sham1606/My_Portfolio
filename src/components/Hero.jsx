@@ -1,82 +1,102 @@
+import React from 'react';
 import { HERO_CONTENT } from "../constants";
 import auro from "../assets/auro.jpg";
 import { motion } from "framer-motion";
 import { highlightWords } from "../utils/highlights";
-import { Link as ScrollLink } from "react-scroll";
-import { useRef } from "react";
-
-const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: delay,
-      duration: 0.5,
-    },
-  },
-});
+import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
-  const aboutRef = useRef(null);
+  const navigate = useNavigate();
+  const isMobile = window.innerWidth < 768;
 
   const wordsToHighlight = {
     "Front-End": "#A25CBF",
     "Machine Learning": "#4DE18B",
     "React": "#61DAFB",
     "Next.js": "#FFFFFF",
-    "three.js": "#FF6F61",
-    "GSAP": "#88CE02",
     "MySQL": "#4479A1",
     "MongoDB": "#4DB33D",
     "Scikit-Learn": "#F7931E",
-    "Tensorflow": "#F7931E",
+    "Tensorflow": "#FF6F00",
   };
 
-  const handleLearnMoreClick = () => {
-    aboutRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+  const handleExplore = () => {
+    navigate('/about');
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center border-b border-neutral-900 pb-4 lg:mb-40">
-      <motion.h1
-        variants={container(0)}
-        initial="hidden"
-        animate="visible"
-        className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl text-center"
-      >
-        Sham Ganesh S
-      </motion.h1>
-      <motion.span
-        variants={container(0.5)}
-        initial="hidden"
-        animate="visible"
-        className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent text-center"
-      >
-        <span style={{ color: "#A25CBF" }}>Front-End</span> &amp;{" "}
-        <span style={{ color: "#4DE18B" }}>Data Scientist</span>
-      </motion.span>
-      <motion.p
-        variants={container(1)}
-        initial="hidden"
-        animate="visible"
-        className="my-2 max-w-xl py-6 font-light tracking-tighter text-center"
-      >
-        {highlightWords(HERO_CONTENT, wordsToHighlight)}
-      </motion.p>
-      
-      <div ref={aboutRef} className="flex justify-center w-full mt-8">
-        <motion.img
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 1.2 }}
-          src={auro}
-          alt="Sham Ganesh S"
-          className="w-[800px] h-[auto] rounded-xl"
-        />
+    <div className="flex flex-col items-center pt-10 md:pt-20 lg:pt-10 lg:h-screen lg:justify-start pb-24">
+      <div className="max-w-3xl mx-auto text-center space-y-8 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative w-32 h-32 mx-auto"
+        >
+          <img
+            src={auro}
+            alt="Profile"
+            className="w-full h-full rounded-full object-cover border-2 border-neutral-700"
+          />
+          <div className="absolute inset-0 rounded-full border-2 border-purple-500 opacity-20"></div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="space-y-2"
+        >
+          <h2 className="text-gray-400 text-lg font-light">Hello, I'm</h2>
+          <h1 className="text-4xl md:text-5xl font-light text-white">
+            Sham Ganesh
+          </h1>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed font-light"
+        >
+          {highlightWords(HERO_CONTENT, wordsToHighlight)}
+        </motion.p>
+
+        {/* Social links - only shown on mobile */}
+        {isMobile && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="flex justify-center space-x-8 pt-8"
+          >
+            <a
+              href="https://github.com/Sham1606"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-white transition-colors"
+            >
+              <FaGithub size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sham-ganesh-aids-922061302/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-white transition-colors"
+            >
+              <FaLinkedin size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/sham_1606"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-white transition-colors"
+            >
+              <FaInstagram size={20} />
+            </a>
+          </motion.div>
+        )}
       </div>
     </div>
   );

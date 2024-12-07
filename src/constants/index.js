@@ -3,18 +3,42 @@ import OF from "../assets/projects/OF.jpeg";
 import Portfolio from "../assets/projects/Portfolio.jpeg";
 import traffic from "../assets/projects/traffic.jpeg";
 import Technologies from "../components/Technologies";
+import CB from "../assets/projects/clientsbridge.jpeg";
+import DC from "../assets/projects/dietcraft.png"
 
 export const HERO_CONTENT = `I am a passionate front-end and Machine Learning developer, specializing in creating robust and scalable web applications with React.JS, and delving into the immersive worlds of Three.JS and GSAP. My back-end expertise spans MySQL and MongoDB, while my data science prowess includes Machine Learning with Scikit-Learn and TensorFlow. I thrive on crafting innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
-export const ABOUT_TEXT = `As a sophomore college student passionate about web development, I'm committed to refining my skills in creating efficient and user-friendly web applications. Despite being in my second year, I've delved into various technologies like React.JS, Python, MySQL, MongoDB, as well as TensorFlow, Scikit-Learn, and OpenCV for machine learning. My journey into web development began with a curiosity for understanding how things work, evolving into a pursuit where I eagerly tackle new challenges. I thrive in collaborative environments, enjoy solving intricate problems, and contribute to open-source projects while nurturing my passion for coding.`;
+export const ABOUT_TEXT = `Instead of Describing my Skills as Paragraph, I would love to showacase that through my skills`;
 
 export const NAVIGATION_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Technologies", href: "#technologies" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  // { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contacts"  },
+  { label: "Contact", href: "#contacts" },
 ];
+
+
+export const EXPERIENCES = [
+  {
+    id: 1,
+    company: "ClientsBridge",
+    position: "Frontend Developer Intern",
+    duration: "September 2024 - Present",
+    description: "Working on cutting-edge web applications using React.JS, CSS. Collaborating with a fellow blooming developers to implement responsive designs and optimize performance.",
+    skills: ["React", "CSS", "Socket-io-Client"],
+    logo: CB
+  },
+  {
+    id: 2,
+    company: "DietCraft",
+    position: "Frontend Developer Intern",
+    duration: "October 2024 - Present",
+    description: "Working on my known web application development skills to enhance an AI diet plan webiste using React.JS, CSS. Collaborating with Machine Learning and Artificial Intelligence",
+    skills: ["Next.JS", "Tailwind CSS", "Redux", "OAuth", "MongoDB"],
+    logo: DC
+  }
+];
+
 
 
 export const PROJECTS = [
