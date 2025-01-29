@@ -61,7 +61,7 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
           </div>
           <div className="hidden lg:flex gap-4">
             <div className="group relative">
-              <a href="https://www.linkedin.com/in/sham-ganesh-aids-922061302/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/sham-ganesh-s-922061302/" target="_blank" rel="noopener noreferrer">
                 <button className="hover:text-blue-700">
                   <FaLinkedin className="w-10 h-6 transition duration-200 ease-in-out group-hover:scale-125" />
                 </button>
