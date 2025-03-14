@@ -1,10 +1,11 @@
-import VC from "../assets/projects/VC.jpeg"
+// import VC from "../assets/projects/VC.jpeg"
 import OF from "../assets/projects/OF.jpeg";
 import Portfolio from "../assets/projects/Portfolio.jpeg";
 import traffic from "../assets/projects/traffic.jpeg";
-import Technologies from "../components/Technologies";
+// import Technologies from "../components/Technologies";
 import CB from "../assets/projects/clientsbridge.jpeg";
 import DC from "../assets/projects/dietcraft.png"
+import auth from "../assets/projects/auth.jpg";
 
 export const HERO_CONTENT = `I am a passionate front-end and Machine Learning developer, specializing in creating robust and scalable web applications with React.JS, and delving into the immersive worlds of Three.JS and GSAP. My back-end expertise spans MySQL and MongoDB, while my data science prowess includes Machine Learning with Scikit-Learn and TensorFlow. I thrive on crafting innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
@@ -43,12 +44,12 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Volume Controller",
-    image: VC,
+    title: "Auth",
+    image: auth,
     description:
-      "In this project we can able to adjust the volume setting with the gesture of our hand",
-    technologies: ["Python", "Computer Vision"],
-    repositoryUrl: "https://github.com/Sham1606/VC"
+      "In this project, I have built a full-stack authentication system with React.js, Node.js, Express.js, and MongoDB. The system uses JWT (JSON Web Token) for authentication and bcrypt.js for password hashing. The system also uses MongoDB with Mongoose for data storage. And also account verification and forgot password functionality",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB","JWT (JSON Web Token)", "bcrypt.js","MongoDB with Mongoose"],
+    repositoryUrl: "https://github.com/Sham1606/Auth"
   },
   {
     title: "Analysis of Online Food Ordering",
