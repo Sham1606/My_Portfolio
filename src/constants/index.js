@@ -7,7 +7,7 @@ import CB from "../assets/projects/clientsbridge.jpeg";
 import DC from "../assets/projects/dietcraft.png"
 import auth from "../assets/projects/auth.jpg";
 
-export const HERO_CONTENT = `I am a passionate front-end and Machine Learning developer, specializing in creating robust and scalable web applications with React.JS, and delving into the immersive worlds of Three.JS and GSAP. My back-end expertise spans MySQL and MongoDB, while my data science prowess includes Machine Learning with Scikit-Learn and TensorFlow. I thrive on crafting innovative solutions that drive business growth and deliver exceptional user experiences.`;
+export const HERO_CONTENT = `I am a passionate front-end and Machine Learning developer, specializing in creating robust and scalable web applications with React.JS, and delving into the immersive worlds of styling frameworks. My back-end expertise spans MySQL and MongoDB, while my data science prowess includes Machine Learning with Scikit-Learn and TensorFlow. I thrive on crafting innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
 export const ABOUT_TEXT = `Instead of Describing my Skills as Paragraph, I would love to showacase that through my skills`;
 

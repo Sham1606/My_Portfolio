@@ -12,9 +12,7 @@ const About = () => {
     "Front-End": "#A25CBF",
     "Machine Learning": "#4DE18B",
     "React": "#61DAFB",
-    "Next.js": "#FFFFFF",
     "Tailwind CSS": "#06B6D4",
-    "Bootstrap": "#7952B3",
     "MySQL": "#4479A1",
     "MongoDB": "#4DB33D",
     "Scikit-Learn": "#F7931E",
@@ -25,9 +23,7 @@ const About = () => {
     "Web Technology 💻": [
       // { name: "Front-End", icon: "💻" },
       { name: "React", icon: "⚛️" },
-      { name: "Next.js", icon: "▲" },
       { name: "Tailwind CSS", icon: "🌊" },
-      { name: "Bootstrap", icon: "🅱️" },
     ],
     "Machine Learning 🤖": [
       // { name: "Machine Learning", icon: "🤖" },
