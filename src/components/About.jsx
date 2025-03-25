@@ -17,6 +17,7 @@ const About = () => {
     "MongoDB": "#4DB33D",
     "Scikit-Learn": "#F7931E",
     "Tensorflow": "#FF6F00",
+    "NLP" : "#4DB33D",
   };
 
   const skills = {
@@ -24,11 +25,12 @@ const About = () => {
       // { name: "Front-End", icon: "💻" },
       { name: "React", icon: "⚛️" },
       { name: "Tailwind CSS", icon: "🌊" },
+      { name: "Flask" , icon: "🌶️" },
     ],
     "Machine Learning 🤖": [
       // { name: "Machine Learning", icon: "🤖" },
       { name: "Scikit-Learn", icon: "🧠" },
-      { name: "Tensorflow", icon: "📊" },
+      { name: "NLP", icon: "🗣️-> 🤖" },
     ],
     "Database 🗄️": [
       { name: "MySQL", icon: "🐬" },

@@ -2,12 +2,21 @@ import React, { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { FaInstagram, FaGithub, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
+import { 
+  FaGithub, 
+  FaLinkedin, 
+  FaTwitter, 
+  FaPaperPlane,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhone
+} from 'react-icons/fa';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
   const [errors, setErrors] = useState({});
@@ -29,6 +38,7 @@ const ContactForm = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = "Email is Invalid";
     }
+    if (!formData.subject) errors.subject = "Subject is Required";
     if (!formData.message) errors.message = "Message is Required";
     return errors;
   };
@@ -49,7 +59,7 @@ const ContactForm = () => {
           "LqfI2_LBFvvXSMyP7"
         );
         toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "" });
       } catch (error) {
         console.error("FAILED...", error);
         toast.error("Failed to send message. Please try again later.");
@@ -59,96 +69,142 @@ const ContactForm = () => {
     }
   };
 
-  const inputVariants = {
-    focus: { scale: 1.02, transition: { duration: 0.2 } },
-  };
-
   return (
-    <div
-      className="flex items-center justify-center min-h-screen "
-      id="contacts"
+    <div 
+      className="min-h-screen flex items-center justify-center px-4 py-12"
+      id="contact"
     >
-      <Toaster />
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <Toaster position="top-right" />
+      
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-4xl p-8 bg-gray-800 rounded-lg shadow-lg"
+        className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden w-full max-w-5xl grid md:grid-cols-2"
       >
-        <div className="text-center mb-12 pt">
-          <h2 className="text-4xl font-bold text-white mb-4">Let's Connect</h2>
-          <p className="text-lg text-gray-300">
-            Have a question or want to work together?
-          </p>
+        {/* Contact Information Section */}
+        <div className="bg-gradient-to-br from-indigo-600 to-purple-600 p-12 flex flex-col justify-between text-white">
+          <div>
+            <h2 className="text-4xl font-bold mb-6">Contact Information</h2>
+            <p className="text-white/80 mb-8">
+              Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities.
+            </p>
+            
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4">
+                <FaEnvelope className="text-2xl" />
+                <span>shamganesh806@gmail.com</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <FaPhone className="text-2xl" />
+                <span>+91 9003927447</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <FaMapMarkerAlt className="text-2xl" />
+                <span>Puducherry, India</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex space-x-6 mt-12">
+            <a 
+              href="https://github.com/Sham1606" 
+              className="text-white hover:text-indigo-200 transition-colors duration-300"
+            >
+              <FaGithub className="text-3xl" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/sham-ganesh-s-922061302/" 
+              className="text-white hover:text-indigo-200 transition-colors duration-300"
+            >
+              <FaLinkedin className="text-3xl" />
+            </a>
+
+          </div>
         </div>
-        <div className="grid md:grid-cols-1 gap-12">
-          <motion.form
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
-            <motion.div variants={inputVariants} whileFocus="focus">
+
+        {/* Contact Form Section */}
+        <div className="p-12">
+          <h3 className="text-3xl font-bold text-white mb-8">Send a Message</h3>
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                  className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/50 transition duration-300"
+                />
+                {errors.name && (
+                  <p className="text-red-400 text-sm mt-2">{errors.name}</p>
+                )}
+              </div>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                  className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/50 transition duration-300"
+                />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-2">{errors.email}</p>
+                )}
+              </div>
+            </div>
+
+            <div>
               <input
                 type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                placeholder="Your Name"
+                name="subject"
+                value={formData.subject}
                 onChange={handleChange}
-                className="w-full appearance-none rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition duration-200"
+                placeholder="Subject"
+                className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/50 transition duration-300"
               />
-              {errors.name && (
-                <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+              {errors.subject && (
+                <p className="text-red-400 text-sm mt-2">{errors.subject}</p>
               )}
-            </motion.div>
-            <motion.div variants={inputVariants} whileFocus="focus">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                placeholder="Your Email"
-                onChange={handleChange}
-                className="w-full appearance-none rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition duration-200"
-              />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-400">{errors.email}</p>
-              )}
-            </motion.div>
-            <motion.div variants={inputVariants} whileFocus="focus">
+            </div>
+
+            <div>
               <textarea
-                id="message"
                 name="message"
                 value={formData.message}
-                placeholder="Your Message"
                 onChange={handleChange}
-                className="w-full appearance-none rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition duration-200"
+                placeholder="Your Message"
                 rows="5"
+                className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/50 transition duration-300"
               />
               {errors.message && (
-                <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                <p className="text-red-400 text-sm mt-2">{errors.message}</p>
               )}
-            </motion.div>
+            </div>
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className={`w-full rounded-lg bg-purple-600 px-6 py-3 text-white font-semibold hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition duration-200 ${
-                isSending ? "cursor-not-allowed opacity-50" : ""
-              }`}
               disabled={isSending}
+              className={`
+                w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white 
+                py-3 rounded-lg font-semibold 
+                hover:from-indigo-700 hover:to-purple-700 
+                transition duration-300
+                ${isSending ? 'opacity-50 cursor-not-allowed' : ''}
+              `}
             >
-              {isSending ? (
-                "Sending..."
-              ) : (
-                <>
-                  Send Message <FaPaperPlane className="inline-block ml-2" />
-                </>
+              {isSending ? 'Sending...' : (
+                <span className="flex items-center justify-center">
+                  Send Message <FaPaperPlane className="ml-3" />
+                </span>
               )}
             </motion.button>
-          </motion.form>
+          </form>
         </div>
       </motion.div>
     </div>
