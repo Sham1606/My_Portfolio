@@ -35,7 +35,7 @@ export const EXPERIENCES = [
     position: "Frontend Developer Intern",
     duration: "October 2024 - Present",
     description: "Working on my known web application development skills to enhance an AI diet plan webiste using React.JS, CSS. Collaborating with Machine Learning and Artificial Intelligence",
-    skills: ["Next.JS", "Tailwind CSS", "Redux", "OAuth", "MongoDB"],
+    skills: ["React.JS", "Tailwind CSS", "OAuth", "MongoDB"],
     logo: DC
   }
 ];

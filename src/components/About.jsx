@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import my_img from "../assets/projects/my_img.png";
-import { ABOUT_TEXT } from '../constants';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ABOUT_TEXT } from '../constants';
 import { highlightWords } from "../utils/highlights";
-import new_logo from './new_logo.png';
 
 const About = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null); // No default active category
 
   const wordsToHighlight = {
     "Front-End": "#A25CBF",
@@ -17,18 +15,17 @@ const About = () => {
     "MongoDB": "#4DB33D",
     "Scikit-Learn": "#F7931E",
     "Tensorflow": "#FF6F00",
-    "NLP" : "#4DB33D",
+    "NLP": "#4DB33D",
+    "Git": "#F05032",
   };
 
   const skills = {
     "Web Technology 💻": [
-      // { name: "Front-End", icon: "💻" },
       { name: "React", icon: "⚛️" },
       { name: "Tailwind CSS", icon: "🌊" },
-      { name: "Flask" , icon: "🌶️" },
+      { name: "Flask", icon: "🌶️" },
     ],
-    "Machine Learning 🤖": [
-      // { name: "Machine Learning", icon: "🤖" },
+    "Data Science 🤖": [
       { name: "Scikit-Learn", icon: "🧠" },
       { name: "NLP", icon: "🗣️-> 🤖" },
     ],
@@ -36,16 +33,19 @@ const About = () => {
       { name: "MySQL", icon: "🐬" },
       { name: "MongoDB", icon: "🍃" },
     ],
+    "Version Control 🔄": [
+      { name: "Git", icon: "🌿" },
+    ]
   };
 
   const SkillCard = ({ skill }) => (
     <motion.div
-      className="bg-neutral-700 p-3 rounded-lg text-center"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      className="bg-neutral-800 p-4 rounded-xl shadow-md text-center flex flex-col items-center justify-center h-24 sm:h-28 border border-neutral-700 hover:border-neutral-500"
+      whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
+      whileTap={{ scale: 0.98 }}
     >
-      <span className="text-2xl mb-2 block">{skill.icon}</span>
-      <span className="text-sm" style={{ color: wordsToHighlight[skill.name] || 'white' }}>
+      <span className="text-3xl sm:text-4xl mb-2 sm:mb-3 block">{skill.icon}</span>
+      <span className="text-xs sm:text-sm font-medium" style={{ color: wordsToHighlight[skill.name] || 'white' }}>
         {skill.name}
       </span>
     </motion.div>
@@ -53,91 +53,109 @@ const About = () => {
 
   const CategoryButton = ({ category, isActive, onClick }) => (
     <motion.button
-      className={`w-full text-left p-4 rounded-lg mb-2 font-semibold text-lg ${
-        isActive ? 'bg-neutral-800' : 'bg-neutral-900'
+      className={`text-left px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+        isActive 
+          ? 'bg-gradient-to-r from-neutral-700 to-neutral-800 shadow-md text-white' 
+          : 'bg-neutral-900 text-neutral-400 hover:text-white'
       }`}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
       onClick={onClick}
     >
       {category}
-      <span className="float-right">{isActive ? '▼' : '▶'}</span>
     </motion.button>
   );
 
   return (
-    <div className="border-b border-neutral-900 pb-12">
-      <div className="lg:hidden fixed top-6 left-6 z-10">
-        <motion.a 
-          href="/"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className=""
-        >
-          {/* <img src={new_logo} alt="Logo" className="w-16 h-16 " /> */}
-        </motion.a>
-      </div>
-      <motion.h1 
-        className="my-20 text-center text-5xl font-bold"
-        initial={{ opacity: 0, y: -50 }}
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+      <motion.div
+        className="mb-8 sm:mb-12 md:mb-16"
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        About <span className="text-neutral-500">Me</span>
-      </motion.h1>
-      <div className="flex flex-wrap items-start justify-center">
-        <motion.div 
-          className="w-full lg:w-1/3 p-4"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-neutral-400">
+          About <span className="text-neutral-500">Me</span>
+        </h1>
+        <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-neutral-400 to-neutral-700 mx-auto mt-4 sm:mt-6 mb-2 rounded-full"></div>
+      </motion.div>
+
+      <div className="grid grid-cols-1 gap-8 sm:gap-12">
+        {/* About Text Section */}
+        <motion.div
+          className="bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-neutral-700"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <img src={my_img} alt="about" className="w-full h-auto rounded-xl shadow-lg" />
+          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 pb-2 sm:pb-3 border-b border-neutral-700 inline-block">Who am I?</h2>
+          <p className="text-base sm:text-lg leading-relaxed text-neutral-200">
+            {highlightWords(ABOUT_TEXT, wordsToHighlight)}
+          </p>
         </motion.div>
-        <motion.div 
-          className="w-full lg:w-2/3 p-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+        
+        {/* Skills Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-neutral-700"
         >
-          <div className="rounded-xl p-6 shadow-lg text-white">
-            <h2 className="text-2xl font-bold mb-4">Who am I?</h2>
-            <p className="text-lg mb-6">
-              {highlightWords(ABOUT_TEXT, wordsToHighlight)}
-            </p>
-            <h3 className="text-xl font-bold mb-4">My Expertise</h3>
-            {Object.entries(skills).map(([category, categorySkills], index) => (
-              <div key={category} className="mb-4">
-                <CategoryButton
-                  category={category}
-                  isActive={activeCategory === category}
-                  onClick={() => setActiveCategory(activeCategory === category ? null : category)}
-                />
-                <AnimatePresence>
-                  {activeCategory === category && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4">
-                        {categorySkills.map((skill) => (
-                          <SkillCard key={skill.name} skill={skill} />
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 pb-2 sm:pb-3 border-b border-neutral-700 inline-block">My Expertise</h2>
+          
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center sm:justify-start">
+            {Object.entries(skills).map(([category, _]) => (
+              <CategoryButton
+                key={category}
+                category={category}
+                isActive={activeCategory === category}
+                onClick={() => setActiveCategory(activeCategory === category ? null : category)}
+              />
             ))}
           </div>
+          
+          <AnimatePresence>
+            {activeCategory && (
+              <motion.div
+                key={activeCategory}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="pt-2 pb-4">
+                  <h3 className="text-lg sm:text-xl text-neutral-300 mb-4 font-medium">{activeCategory} Skills:</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+                    {skills[activeCategory].map((skill) => (
+                      <SkillCard key={skill.name} skill={skill} />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          
+          {!activeCategory && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-8 text-neutral-400"
+            >
+              <p className="text-sm sm:text-base">Select a category to view my skills</p>
+              <motion.div 
+                className="mt-4 text-2xl"
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                ☝️
+              </motion.div>
+            </motion.div>
+          )}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default About;
-
