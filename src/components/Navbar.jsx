@@ -82,7 +82,7 @@ const Navbar = ({ handleScroll, navigationLinks }) => {
         {/* Social Icons (Desktop) */}
         <div className="hidden lg:flex gap-4">
           {[{
-            href: "https://www.linkedin.com/in/sham-ganesh-s-922061302/",
+            href: "https://www.linkedin.com/in/sham-ganesh16/",
             icon: <FaLinkedin className="w-10 h-6 transition duration-200 ease-in-out group-hover:scale-125" />,
             color: "bg-blue-700",
             label: "LinkedIn"
